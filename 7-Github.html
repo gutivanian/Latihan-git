@@ -37,7 +37,50 @@
     <h3>Git Fetch</h3>
     <p>
         Fetch mendapatkan semua sejarah dari branch/repo yang terlacak. Jadi, pada local git, fetch mengupdate untuk mengetahui apa yang telah terjadi pada github.
+        <pre>
+            git fetch origin
+            remote: Enumerating objects: 5, done.
+            remote: Counting objects: 100% (5&#47;5), done.
+            remote: Compressing objects: 100% (3&#47;3), done.
+            remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+            Unpacking objects: 100% (3&#47;3), 733 bytes | 3.00 KiB&#47;s, done.
+            From https:&#47;&#47;github.com&#47;w3schools-test&#47;hello-world
+               e0b6038..d29d69f  master     -&gt; origin&#47;master
+        </pre>
     </p>
+    <p>
+        Sekarang kita telah mendapatkan perubahan terakhir. Kita dapat mengecek statusnya:
+        <pre>
+            git status
+            On branch master
+            Your branch is behind &#39;origin&#47;master&#39; by 1 commit, and can be fast-forwarded.
+              (use &quot;git pull&quot; to update your local branch)
+            
+            nothing to commit, working tree clean
+        </pre>
+    </p>
+    <p>
+        Kita berada pada "origin/master" oleh 1 commit. Kita bisa mengecek log commit dengan <span class="code">git log origin/master</span>. Kita juga bisa melihat perbedaan antara master lokal dengan origin/master dengan <span class="code">git diff origin/master</span>.
+    </p>
+
+    <h3>Git Merge</h3>
+    <p>
+        merge mengkombinasikan branch sekarang dengan branch lain yang dipilih. Kita bisa mengonfirmasi update dengan memerge/menggabungkan branch sekarang (master) dengan origin/master. Kita bisa melakukan melakukan merge dengan <span class="code">git merge origin/merge</span>.
+    </p>
+
+    <h2>Git Pull</h2>
+    <p>
+        Pull adalah proses mengupdate repository lokal tanpa melewati proses panjang diatas. pull adalah gabungan antara fetch dan merge. Ini berguna untuk menarik semua perubahan dari repository remote ke branch tempat kita bekerja. Misalkan kita edit readme lagi, kita bisa gunakan pull untuk mengupdate git local kita. 
+    </p>
+
+    <h2>Git Push</h2>
+    <p>
+        Misalkan kita membuat beberapa perubahan di git lokal dan kemudian push mereka ke github. Kita lakukan commit terlebih dahulu misalkan <span class="code">git commit -a -m "Message Commit"</span>.
+    </p>
+
+
+
+
 
 
 
