@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Github</h1>
+    <p>
+        Untuk terhubung ke github, pertama-tama kita perlu membuat akun github. Selanjutnya, login github dan buat repository baru. Karena kita telah membuat repo git di lokal, kita dapat mengupload ke github atau islitahnya <b>push</b>. Untuk melakukannya, kita perlu copy url HTTPS dengan berbentuk "https://github.com/gutivanian/Latihan-git.git". Selanjutnya kita bisa gunakan <span class="code">git remote add origin https://github.com/gutivanian/Latihan-git.git</span>. Kadang akan muncul <span class="code">error: remote origin already exists.</span>, artinya nama "origin" telah digunakan. Maka dari itu, kita perlu mengganti nama repo lokal kita menjadi yang lain. <span class="code">git remote add NamaRepo URL</span> menspesifikasikan bahwa kita menambahkan sebuah repository remote, yang dispesifikasikan oleh "URL" sebagai "NamaRepo" ke repo git lokal. Kita dapat melakukan <b>push</b> master branch kita ke url
+        <pre>
+            git push --set-upstream origin master
+            Enumerating objects: 22, done.
+            Counting objects: 100% (22&#47;22), done.
+            Delta compression using up to 16 threads
+            Compressing objects: 100% (22&#47;22), done.
+            Writing objects: 100% (22&#47;22), 92.96 KiB | 23.24 MiB&#47;s, done.
+            Total 22 (delta 11), reused 0 (delta 0), pack-reused 0
+            remote: Resolving deltas: 100% (11&#47;11), done.
+            To https:&#47;&#47;github.com&#47;w3schools-test&#47;hello-world.git
+             * &#91;new branch&#93;      master -&gt; master
+            Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;origin&#39;.
+        </pre>
+    </p>
+
+    <h2>Edit Code di Github</h2>
+    <p>
+        Selain menjadi host konten Git, GitHub memiliki editor kode yang sangat bagus. Misalkan readme.md, kita bisa edit dengan mengklik tombol edit. Setelah melakukan editing, kita bisa lakukan <span class="code">commit</span> perubahan. Untuk sementara kita bisa pilih "Commit directly to the master branch". Jangan lupa untuk memberi deskripsi/catatan saat melakukan commit. 
+    </p>
+
+    <h2>Git Pull dari Github</h2>
+    <p>
+        Ketika bekerja sebagai tim di sebuah proyek, cukup penting bagi setiap orang agar selalu up to date. Kapanpun kita mulai bekerja pada sebuah proyek, kita harus mendapatkan perubahan terbaru ke salinan lokal. Dengan git, kita bisa melakukannya dengan <span class="code">pull</span>. <span class="code">pull</span> adalah kombinasi dari dua perintah: <span class="code">fetch</span> dan <span class="code">merge</span>.
+    </p>
+
+    <h3>Git Fetch</h3>
+    <p>
+        Fetch mendapatkan semua sejarah dari branch/repo yang terlacak. Jadi, pada local git, fetch mengupdate untuk mengetahui apa yang telah terjadi pada github.
+    </p>
+
+
+
+</body>
+</html>
