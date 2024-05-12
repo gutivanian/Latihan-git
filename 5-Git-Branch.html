@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Git Branch</h1>
+    <p>
+        Di git, sebuah <b>branch</b>(cabang) adalah versi baru/terpisah dari repository utama. Misalkan kita memiliki proyek yang sangat besar, dan misalkan kita ingin melakukan update desainnya. Apa yang perlu dilakukan dengan dan tanpa git adalah:
+    </p>
+    <p>
+        Tanpa git:
+        <ul>
+            <li>Membuat salinan dari semua file relevan untuk menghindari efek dari versi yang sedang berjalan.</li>
+            <li>Mulai bekerja dengan desain dan mencari tahu kode yang bergantung pada file lain,  yang iaman ini juga perlu untuk diubah</li>
+            <li>Membuat salinan dari file yang bergantung dengan file lain juga. Kita juga perlu memastikan bahwa setiap dependensi file merefer ke nama file yang benar</li>
+            <li>DARURAT! Ada error yang tidak berhubungan di suatu tempat di proyek, sehingga perlu diselesaikan secepatnya</li>
+            <li>Simpan semua file, buat catatan nama dari salinan tempat kita bekerja</li>
+            <li>Bekerja dengan error yang tidak berkaitan dan update kode untuk menyelesaikannya</li>
+            <li>Kembali ke desain, dan selesaikan pekerjaan disini</li>
+            <li>Salin kode, atau ubah nama, sehingga desain yang telah berubah sekarang berada pada versi yang berjalan</li>
+            <li>Akan ada masalah lain yaitu bahwa jika menyalin file sebelum diperbaiki, error akan muncul lagi</li>
+        </ul>
+    </p>
+    <p>
+        Dengan git:
+        <ul>
+            <li>Dengan cabang(branch) yang disebut sebagai desain-baru, kita bisa edit kode tanpa memengaruhi cabang utama</li>
+            <li>DARURAT! Ada error yang tidak berhubungan di suatu tempat di proyek, sehingga perlu diselesaikan secepatnya</li>
+            <li>Buat cabang baru dari proyek utama dan kasih nama misalkan "small-error-fix"</li>
+            <li>Selesaikan error itu an gabungkan cabang "small-error-fix" dengan cabang utama.</li>
+            <li>Kembali ke cabang desain-baru, dan selesaikan pekerjaan disini</li>
+            <li>Gabungkan cabang desain-baru dengan cabang utama (akan diinformasikan bahwa error yang telah diselesaikan telah menghilang)</li>
+        </ul>
+    </p>
+    <p>
+        Cabang/Branch mengijinkan kita untuk bekerja pada bagian berbeda dari sebuah proyek tanpa memengaruhi cabang utama. Ketika pekerjaan selesai, sebuah cabang dapat digabungkan dengan cabang utama. Kita bahkan dapat berpindah antar cabang dan bekerja pada proyek berbeda tanpa memengaruhi satu sama lain. Membuat cabang di git sangat mudah dan cepat.
+    </p>
+
+    <h2>Membuat Cabang Git Baru</h2>
+    <p>
+        Misalkan buat sebuah fitur pada file lama. Kita bekerja di repository lokal, dan tidak ingin mengganggu atau bahkan merusah cabang utama. Sehingga kita bisa membuat cabang baru. Untuk membuatnya gunakan <span class="code">git branch nama-branch</span>
+        <pre>
+            git branch hello-world-images
+        </pre>
+    </p>
+    <p>
+        Kita telah membuat sebuah branch baru. Untuk mengecek apakah branch tersebut benar-benar telah terbuat, kita bisa cek melalui <span class="code">git branch</span>
+        <pre>
+            git branch
+              hello-world-images
+            * master
+        </pre>
+    </p>
+    <p>
+        Kita bisa melihat terdapat branch baru bernama "hello-world-images" dan sekarang kita sedang bekerja pada branch master. Kita bisa melihat bahwa tanda bintang (*) berada di branch master. Kita bisa berpindah cabang dengan perintah <span class="code">checkout</span>
+        <pre>
+            git checkout hello-world-images
+            Switched to branch &#39;hello-world-images&#39;
+        </pre>
+    </p>
+    <p>
+        Sekarang kita telah berpindah dari cabang master ke cabang baru. Kita bisa melakukan perubahan dalam file, misalkan file HTML ini. Maka kita dapat melihat status cabang sekarang dengan <span class="code">git status</span>.
+        <pre>
+            $ git status
+            On branch branch-1
+            Changes not staged for commit:
+              (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+              (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+                    modified:   5-Git-Branch.html
+            
+            no changes added to commit (use &quot;git add&quot; and&#47;or &quot;git commit -a&quot;)
+            
+        </pre>
+    </p>
+    <p>
+        Terlihat bahwa perubahan yang kita buat masih belum berada pada staging environment, Sehingga kita perlu menambahkan dengan <span class="code">git add --all</span>. Kemudian kita bisa lakukan commit ke branch dengan git commit -m "Pesan commit". Dengan demikian, kita telah mendapatkan sebuah branch baru yang terpisah dari branch master. 
+    </p>
+
+    <h2>Berpindah Antar Branch</h2>
+    <p>
+        Sekarang kita ingin mencoba untuk berpindah cabang. Sekarang kita berada pada cabang "branch-1" atau "hello-world-images". Kita bisa mengecek fila apa saja pada cabang ini dengan "ls". Dan kemudian kita berpindah ke cabang master dengan <span class="code">git checkout master</span> dan kemudian "ls", kita bisa melihat bahwa perubahan dan penambahan file tidak berpengaruh ke branch master, karena proses itu terjadi pada branch-1. 
+    </p>
+
+    <h2>Branch Darurat</h2>
+    <p>
+        Namun, misalkan kita belum selesai bekerja di cabang "branch-1" dan memiliki kebutuhan untuk menyelesaikan error di master. Kita tidak ingin berurusan dengan master secara langsung dan juga tidak ingin merusah branch-1 karena masih belum selesai.  Sehingga kita bisa membuat branch baru untuk mengerjakan hal darurat dengan <span class="code">git checkout -b emergency-fix</span>.
+        <pre>
+            it checkout -b emergency-fix
+            Switched to a new branch &#39;emergency-fix&#39;
+        </pre>
+    </p>
+    <p>
+        Setelah berpindah ke branch emergency-fix, kita dapat menyelesaikan kode kita untuk error dan kemudian ditambahkan ke staging environment dan juga dilakukan commit. Maka selesesai sudah penyelesaian untuk master dan siap untuk menggabungkan dua branch.
+    </p>
+
+</body>
+</html>

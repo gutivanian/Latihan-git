@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Git Commit</h1>
+    <p> 
+        Ketika pekerjaan telah selesai, kita dapat berpindah dari stage ke commit. Menambahkan commit akan melacak perkembangan kita dan perubahan selama kita bekerja. Git menganggap setiap commit adalah titik perubahan atau "save point". Ini adalah titik pada sebuah projek dimana kita bisa kembali jika kita menemukan bug atau ingin melakukan perubahan. 
+    </p>
+    <p>
+        Ketika melakukan commit, kita harus memberikan pesan. Dengan menambahkan pesan yang jelas, kita akan memberikan informasi mengenai apa yang berubah dan kapan. Contoh kita bisa melakukan commit dan memberi pesan dengan <span class="code">git commit -m "Pesan"</span>:
+        <pre>
+            git commit -m &quot;First release of Hello World!&quot;
+            &#91;master (root-commit) 221ec6e&#93; First release of Hello World!
+             3 files changed, 26 insertions(+)
+             create mode 100644 README.md
+             create mode 100644 bluestyle.css
+             create mode 100644 index.html
+        </pre>
+    </p>
+    <p>
+        Perintah <span class="code">commit</span> akan melakukan commit, sedangkan perintah <span class="code">-m "Pesan"</span> adalah penambahan pesan. Staging Environment telah berhasil dicommit ke repo dengan pesan "First release of Hello World!".
+    </p>
+
+    <h2>Git Commit Tanpa Stage</h2>
+    <p>
+        Kadang-kadang, ketika melakukan perubahan kecil, menggunakan staging environment tidaklah sesuai dan buang-buang waktu. Maka dari itu, memungkinkan untuk melakukan commit perubahan secara langsung melewati staging environment. Opsi <span class="code">-a</span> akan secara otomatis melakukan staging setiap ada perubahan dari file yang telah terlacak. 
+        <pre>
+            git commit -a -m &quot;Updated index.html with a new line&quot;
+            &#91;master 09f4acd&#93; Updated index.html with a new line
+             1 file changed, 1 insertion(+)
+        </pre>
+    </p>
+    <p>
+        Hati-hati bahwa melewati staging sangat tidak direkomendasikan. Melewati step staging kadang-kadang akan memunculkan perubahan yang tidak diinginkan. 
+    </p>
+
+    <h2>Git Commit Log</h2>
+    <p>
+        Untuk melihat sejarah commit dari repository, kita bisa gunakan perintah <span class="code">git log</span>
+    </p>
+</body>
+</html>

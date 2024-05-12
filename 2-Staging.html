@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Git Staging Environment</h1>
+    <p>
+        Salah satu fungsi utama dari Git adalah konsep Staging Environment dan Commit. Ketika kita bekerja, kita mungkin menambahkan, mengedit, atau menghapus file. Namun ketika kita sampai ke titik tertentu atau telah menyelesaikan pekerjaan, kita perlu menambahkan file ke Staging Environment. 
+    </p>
+    <p>
+        File dikatakan <b>Staged</b> jika file telah siap untuk dicommit ke repository tempat kita bekerja. Misalkan kita telah selesai bekerja dengan file HTML, maka kita bisa menambahkan ke Staging Environmen dengan <span class="code">git add NamaFile.html</span>. Kemuian kita dapat mengecek status dengan <span class="code">git status</span> dan akan menghasilkan
+        <pre>
+            git status
+            On branch master
+            
+            No commits yet
+            
+            Changes to be committed:
+              (use &quot;git rm --cached ...&quot; to unstage)
+                new file: index.html
+        </pre>
+    </p>
+   <p>
+     Sekarang terlihat bahwa file sudah berada di Staging Environment. 
+   </p>
+
+   <h2>Menambah Lebih dari Satu File</h2>
+   <p>
+    Kita bisa menambahkan banyak file ke Staging Environment dengan menggunakan <span class="code">git add --all</span>. Menggunakan <span class="code">--all</span> ketimbang menggunakan nama file masing-masing akan melakukan staging ke semua perubahan (file baru, berubah atau hilang). Cara lain adalah dengan <span class="code">git add -A</span>, hasilnya sama saja. 
+   </p>
+
+
+
+
+</body>
+</html>

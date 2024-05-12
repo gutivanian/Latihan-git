@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Git</title>
+  </head>
+  <body>
+    <h1>Git</h1>
+    <p>
+      Git adalah sistem kpntrpl versi. Git membantu kita untuk melacak perubahan kode. Git juga berguna untuk kolaborasi dalam kode. Git dapat memanajemen proyek dengan repositori. Membuat salinan projek di local. untuk mengontrol perubahan menggunakan <b>Staging</b> dan <b>Committing</b>. Kita juga bisa bekerja di bagian versi berbeda dengan <b>Branch</b> dan <b>Merge</b>. Kita bisa mrngambil salinan dari versi terbaru dengan <b>Pull</b>. Kita juga bisa mengirim hasil pekerjaan kitabdengan <b>Push</b>.
+    </p>
+    <p>
+      Untuk menggunakan Git,kita bisa membuat folder atau disebut sebagai <b>Repository</b>. Git sekarang akan membuat sebuah folder tersembunyi untuk melacak perubahan kode. Ketika sebuah file berubah, ditambah atau dikurang, maka ini dikatakan ternodifikasi. Kita bisa memilih file yang telah dimodifikasi untuk dilakukan <b>Staging</b> yang berarti perubahan ke versi terbaru. File yang telah dilakukan staging dapat dilakukan <b>Commit</b>, yang merupakan sebuah perintah git untuk menyimpan potretan file. Git mengijinkan kita untuk melihat sejarah lengkap untuk setiap comit. Kita bisa kembali ke comit sebelumnya. Git tidak menyimpan salinan setiap comit di file terpisah, namun hanya melacak perubahan yang dilakukan pada setiap comit.
+    </p>
+    <p>
+        Git tidak sama dengan github. Github membuat alat yang menggunakan git. Github adalah host source code terbesar di dunia yang dimiliki microsoft sejak 2018. 
+    </p>
+
+    <h2>Install Git</h2>
+    <p>
+        Untuk menginstall git bisa cek di <a href="www.git-scm.com">www.git-scm.com</a>. Untuk menggunakan Git, kita bisa buka <span class="program">git bash</span> di windows. Kita bisa cek versi git kita dengan <span class="code">git --version</span> 
+    </p>
+
+    <h2>Konfigurasi Git</h2>
+    <p>Kita bisa mengonfigurasi nama dan email dengan <span class="code">git config --global user.name "UserName"</span> dan <span class="code">git.config --global user.email "contoh@email.com"</span>. Gunakan <span class="code">global</span> untuk menset username dan email untuk semua repository di komputer kita. Jika kita ingin menset username dan email hanya untuk repo sekarang, kita bisa hapus <span class="code">global</span>.
+    </p>
+
+    <h2>Membuat Folder Git</h2>
+    <p>
+        Kita bia membuat folder dengan <span class="code">mkdir NamaFolder</span> dan berpindah ke folder itu dengan <span class="code">cd NamaFolder</span>
+    </p>
+
+    <h2>Inisialisasi Git</h2>
+    <p>
+        Setelah kita berada pada lokasi yang benar, kita bisa menginisiasi git dengan <span class="code">git init</span>. Dengan demikian kita akan membuat repository.  Git akan membuat sebuah hidden folder untuk melacak perubahan file. 
+    </p>
+
+    <h2>Menambah File Baru</h2>
+    <p>
+        Setelah membuat repo baru, repo ini adalah kosong. Jadi kita perlu menambahkan file. Misalkan kita menambahkan file HTML, maka buat file HTML dan simpan di folder yang telah dibuat. Untuk mengecek apakah sudah tersimpan, maka bisa buka kembali bash an ketikkan <span class="code">ls</span>. Jika file HTMLnya muncul, maka memang telah tersimpan. Selanjutnya kita bisa melihat status dengan <span class="code">git status</span>. Sekarang git mengetahui keberadaan file, namun masih belum ditambahkan ke repo. File dalam git memiiki kemungkinan berada di satu antara dua keadaan:
+        <ol>
+            <li>Tracked - File yang dikenal oleh git dan telah ditambahkan ke repository</li>
+            <li>Untracked - File yang berada pada direktori pekerjaan namun belum ditambahkan ke repository.</li>
+        </ol>
+    </p>
+    <p>
+      Ketika kita menambahkan file ke sebuah repository, semuanya bersifat untracked. Untuk menjadikan Tracked, kita harus melakukan <b>Staging</b>.
+    </p>
+
+  </body>
+</html>
